@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div布局初始</title>
+    <style type="text/css">
+        body{
+            margin: 0px;
+        }
+        div#all{
+            width: 100%;
+            height: 950px;
+            background-color: dimgray;
+        }
+        #head{
+            width: 100%;
+            height: 10%;
+            background-color: aquamarine;
+        }
+        div#menu{
+            width: 30%;
+            height: 80%;
+            background-color: aqua;
+            float: left;
+        }
+        div#body{
+            width: 70%;
+            height: 80%;
+            background-color: blue;
+            float: left;
+        }
+        #butt{
+            width: 100%;
+            height: 10%;
+            background-color: chartreuse;
+            clear: both;/*清除浮动*/
+        }
+    </style>
+</head>
+<body>
+<div id="all">
+    <div id="head">头部</div>
+    <div id="menu">菜单</div>
+    <div id="body">主体</div>
+    <div id="butt">底部</div>
+</div>
+</body>
+</html>

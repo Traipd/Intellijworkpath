@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式测试+表格</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <style type="text/css">
+            p{
+                color: yellow;
+            }
+            #div1 p{
+                color: red;
+            }
+            #div1 a{
+                color: aqua;
+            }
+        </style>
+</head>
+<body>
+
+<h1>标题h1</h1>
+<p>标题p</p>
+<a style="color: darkseagreen">标题a</a>
+
+<div id="div1">
+    <p>此处div的p</p>
+    <a>此处div的a</a>
+
+</div>
+
+<table border="1" bgcolor="#8fbc8f">
+    <caption>我的表格</caption>
+    <tr>
+        <th>表头</th> <th>表头</th>
+    </tr>
+    <tr>
+        <td rowspan="2">1</td> <td>2</td>
+    </tr>
+    <tr>
+        <td> 4</td>
+    </tr>
+</table>
+<table border="1" cellpadding="20" cellspacing="10" background="image/QQ.jpg">
+    <caption>我的表格2</caption>
+    <col align="right">
+    <col align="left">
+    <tr>
+        <th>表头表头表头</th> <th>表头表头表头</th>
+    </tr>
+    <tr>
+        <td colspan="2">1</td>
+    </tr>
+    <tr>
+        <td>2</td> <td> 4</td>
+    </tr>
+</table>
+</body>
+</html>

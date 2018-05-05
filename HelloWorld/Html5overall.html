@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5全局属性</title>
+    <script>
+       document.getElementById("des").designMode="off"
+    </script>
+
+</head>
+<body>
+
+<p contenteditable="true">contenteditable看看这里可编辑吗</p>
+
+<iframe id="des">
+    <p>看看designMode是否可编辑</p>
+</iframe>
+
+<p>看得见我吗（下一行）</p>
+<p hidden="true">看不见我吗</p>
+<textarea spellcheck="true">这里开启了默认的拼写错误检查</textarea>
+<br>
+<input type="text" tabindex="-1" value="按Tab无法选到这里"><br>
+<input type="text" tabindex="3" value="按Tab第二个选到这里"><br>
+<input type="text" tabindex="44" value="按Tab第三个选到这里"><br>
+<input type="text" tabindex="1" value="按Tab第一个选到这里"><br>
+<input type="text" tabindex="0" value="按Tab最后选到这里"><br>
+</body>
+</html>
