@@ -2,17 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>article实例+embed</title>
+    <title>Html5新增主体结构元素</title>
 </head>
 <body>
+
 <article>
     <header>这是标题</header>
 
-    <section>
-        <h1>section介绍</h1>
-        <p>有时section可与article互换使用</p>
-        <p>不推荐给没有标题的内容使用section</p>
-    </section>
+    <article>
+        <section>
+            <h1>section介绍</h1>
+            <p>有时section可与article互换使用</p>
+            <article>可嵌入的article</article>
+            <p>不推荐给没有标题的内容使用section</p>
+        </section>
+    </article>
+
+    <article>
+        <header>
+            <hgroup>
+                <h1>一级标题</h1>
+                <h2>二级标题</h2>
+            </hgroup>
+        </header>
+    </article>
 
     <nav>
         <ul>
@@ -37,8 +50,21 @@
     &lt;time&gt;的属性的作用在脚本中提现</br>
 
     <p>任意段落</p>
+
     <article>可嵌入的article</article>
-    <footer>版权所有，转载注明来源</footer>
+    <footer>
+        <h2>版权所有，转载注明来源</h2>.
+       <address>
+           <ul>
+               <li>  &lt;address&gt;元素用于定义联系用信息</li>
+               <li>联系地址：</li>
+               <li>文档创建者：</li>
+               <li>电子邮箱：</li>
+           </ul>
+       </address>
+
+
+    </footer>
 </article>
 
 <article>

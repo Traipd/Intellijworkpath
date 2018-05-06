@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增的form相关的input属性</title>
+</head>
+<body>
+
+    <p>&lt;form&gt;</p>
+   <form action="#" method="get" id="myForm">
+       <input type="text" name="ftext"/>
+       <input type="submit" value="提交"/>
+   </form>
+   </br>
+   <input type="text" value="点击上面的提交,此处也可一并提交" form="myForm">
+
+
+    </br>
+    <p>&lt;autofocus&gt;</p>
+    <form>
+        <input type="text" value="autofocus自动获取焦点，光标在下面"></br>
+        <input type="text" value="" autofocus>
+    </form>
+
+   </br>
+    <p>&lt;formaction&gt;</p>
+   <form id="sForm" action="index.html">
+       <input type="submit" value="s1"/>提交到index.html      </br>
+       <input type="submit" value="s1" formaction="index2.html"/>提交到index2.html
+   </form>
+
+    </br>
+    <p>&lt;formmethod&gt;</p>
+    <form method="post">
+        <input type="submit" formmethod="get" value="用get提交" formaction="index.html"/>
+        <input type="submit" value="用post提交" formaction="index2.html"/>
+    </form>
+
+    </br>
+    <p>&lt;formenctype&gt;</p>
+    <form action="http://localhost:8000/IoPHPServer/FormTest.php">
+        <input type="text"  name="f1"  formenctype="text/plain" value="空格转换为 &quot;+&quot; 加号，但不对特殊字符编码。"></br>    <!--用php输出无变化-->
+        <input type="text" formenctype="multipart/form-data" value="不对字符编码。在使用包含文件上传控件的表单时，必须使用该值"></br>
+        <input type="text" formenctype="application/x-www-form-urlencoded" value="在发送前编码所有字符（默认）"></br>
+        <input type="submit" value="提交" formmethod="post"/>
+    </form>
+
+    </br>
+    <p>&lt;formtarget&gt;</p>
+    <form action="index2.html">
+        <p>在不同的地方打开新页面</p>
+        <input type="submit" value="在新的页面打开" formtarget="_blank"/>
+        <input type="submit" value="在当前页面打开" formtarget="_self"/>
+        <input type="submit" value="在上一级框架打开" formtarget="_parent"/>
+        <input type="submit" value="在顶层框架打开" formtarget="_top"/>
+        <input type="submit" value="在指定name框架打开" formtarget="1if"/>
+    </form>
+    <iframe name="1if"></iframe>
+
+    </br>
+    <p>&lt;required&gt;</p>
+    <form action="#">
+    <input type="text" required/>
+     <input type="submit" value="为空则不能提交" />
+    </form>
+
+    </br>
+    <p>&lt;lable标签和for、lables属性&gt;</p>
+    <script>
+        function lableOnclick() {
+            var txt =document.getElementById("txt");
+            var labelform=document.getElementById("labelform");
+            var labelbutton=document.getElementById("labelbutton");
+            alert("有反应");
+            if(txt.value.trim()=="")
+            {
+                var label=document.createElement("label");
+                label.setAttribute("for","txt");
+                labelform.insertBefore(label,labelbutton);
+                txt.labels[1].innerHTML="提交内容不能为空";
+                txt.labels[1].setAttribute("style","font-size:9px;color:red");/*labels数组按顺序存储绑定在input标签上的label*/
+            }
+        }
+    </script>
+    <form id="labelform">
+        <label id="label" for="txt" >请输入：</label><!--for 用于绑定对应的input标签-->
+        <input id="txt">
+        <input type="button" id="labelbutton" value="检测" onclick="lableOnclick()">
+    </form>
+
+
+    </br>
+    <p>&lt;control&gt;</p>
+    <p>在HTML5中，可以在标签内部放置一个表单元素，并且通过该标签的control属性来访问该表单元素。</p>
+    <script>
+        function setControl() {
+            var labelc=document.getElementById("labelc");
+            var labelcontrol=labelc.control;
+            labelcontrol.value="123456";
+        }
+    </script>
+    <form>
+        <label id="labelc">
+            <p>请输入六位数：</p>
+            <input id="txtco" maxlength="6">
+        </label>
+        <input type="button" value="设置默认值" onclick="setControl()"/>
+    </form>
+
+    </br>
+    <p>&lt;placeholder&gt;</p>
+     <input type="text" placeholder="输入框为空时显示的信息"/>
+</body>
+</html>
