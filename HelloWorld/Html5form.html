@@ -110,5 +110,28 @@
     </br>
     <p>&lt;placeholder&gt;</p>
      <input type="text" placeholder="输入框为空时显示的信息"/>
+
+    </br>
+    <p>&lt;list&gt;</p>
+    <form>
+        <p>可以自行输入和选择内容,输入过程中会进行内容匹配</p>
+        <input type="text"  list="mylist"/>
+        <datalist id="mylist">
+            <option label="Google" value="www.google.com"></option>
+            <option label="百度" value="www.baidu.com"></option>
+        </datalist>
+    </form>
+
+    </br>
+    <p>&lt;autocomplete&gt;</p>
+    <p>控制自动完成的功能的开关</p><!--请在服务器上完成此项测试-->
+    <form action="#" method="get" autocomplete="on" >
+        测试是否会自动提示内容<input type="text"/><br/>
+        <input type="submit"/>
+    </form>
+
+    </br>
+    </br>
+    </br>
 </body>
 </html>
