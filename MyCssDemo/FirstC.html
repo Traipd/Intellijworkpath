@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个CSS试验页面</title>
+    <link href="MyCss.css" rel="stylesheet" type="text/css">
+    <!--type="text/css"规定被链接文档的 MIME 类型，不写不影响显示效果-->
+</head>
+<body>
+  <p>群组(并集)选择器</p>
+  <h1>这应该是蓝色</h1>
+  <a>次行与上一行采用相同样式</a>
+  <br>
+  <br>body内的内容
+  <h2>未采用样式，可继承父标签的样式</h2>
+  <br> <br>
+  <p>子元素（派生）选择器----可与其他选择器一同使用</p>
+  <p><strong>&lt;P&gt;内的&lt;strong&gt;</strong></p>
+   <ul>
+       <li><strong>&lt;li&gt;内的&lt;strong&gt;</strong></li>
+   </ul>
+  <br> <br>
+  <p>id选择器</p>
+  <div id="firstid">id选择器的<a>内容</a></div>
+  <br> <br>
+  <p>class（类）选择器</p>
+  <div class="fclass sclass">class选择器的<a>内容</a></div>
+  <br> <br>
+  <p>相邻选择器</p>
+  <div id="lv">div1 </div> <div>div2 </div> <div>div3 </div>
+  <br> <br>
+  <p>属性和值选择器</p>
+  <div title="000">title无正确选值情况</div> <div title="g">title为g </div>
+</body>
+</html>

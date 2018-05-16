@@ -1,0 +1,38 @@
+h1,a{
+    color: blue;
+    font-size: 20px;
+}
+body
+{
+    color: red;
+}
+p strong
+{
+    color: green;
+}
+#firstid{
+    color: blue;
+}
+#firstid a{
+    color: green;
+    font-size: 30px;
+}
+.fclass{
+    color: blue;
+}
+.sclass{
+     font-size: 30px;
+ }
+.fclass a{
+    color: green;
+    font-size: 30px;
+}
+#lv+div{
+    color: green;
+}
+[title]{
+    color: blue;
+}
+[title=g]{
+    color: green;
+}
