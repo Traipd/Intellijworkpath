@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用于展示背景相关CSS属性</title>
+    <link  href="a.css" title="a" rel="stylesheet" type="text/css">
+    <link  href="b.css" title="b" rel="stylesheet" type="text/css">
+    <script language="JavaScript">
+        function setStyle(btn) {
+
+            var links;
+            links=document.getElementsByTagName("link");
+            for(var i=0;i<links.length;i++)
+            {
+                if(links[i].getAttribute("rel").indexOf("stylesheet")!=-1 &&links[i].getAttribute("title"))
+                {
+                    links[i].disabled=true;
+                    if(links[i].getAttribute("title").indexOf(btn.value)!=-1)
+                    {
+                        links[i].disabled=false;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="setStyle(this)" value="a">背景a</button>
+<button onclick="setStyle(this)" value="b">背景b</button>
+</body>
+</html>

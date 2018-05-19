@@ -6,6 +6,12 @@
     <link href="MyCss.css" rel="stylesheet" type="text/css">
     <!--type="text/css"规定被链接文档的 MIME 类型，不写不影响显示效果-->
 </head>
+<style>
+    .front{color: blue}
+    .back{color: green}
+    .front2{color: blue !important;font-size: 5px;}
+    .back2{color: green ;font-size: 50px;}
+</style>
 <body>
   <p>群组(并集)选择器</p>
   <h1>这应该是蓝色</h1>
@@ -20,7 +26,7 @@
        <li><strong>&lt;li&gt;内的&lt;strong&gt;</strong></li>
    </ul>
   <br> <br>
-  <p>id选择器</p>
+  <p>id选择器（优先级高于class（类）选择器）</p>
   <div id="firstid">id选择器的<a>内容</a></div>
   <br> <br>
   <p>class（类）选择器</p>
@@ -31,5 +37,10 @@
   <br> <br>
   <p>属性和值选择器</p>
   <div title="000">title无正确选值情况</div> <div title="g">title为g </div>
+  <br> <br>
+  <p>CSS的优先级</p>
+  <div id="idvsclass" class="fclass">id选择器（优先级高于class（类）选择器）</div>
+   <div class="front back">后面的样式覆盖前面的样式</div>
+  <div class="front2 back2">使用！important提升某项属性的优先级</div>
 </body>
 </html>
