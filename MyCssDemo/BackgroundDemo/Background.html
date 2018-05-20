@@ -5,9 +5,10 @@
     <title>用于展示背景相关CSS属性</title>
     <link  href="a.css" title="a" rel="stylesheet" type="text/css">
     <link  href="b.css" title="b" rel="stylesheet" type="text/css">
+    <link  href="imageBack.css" title="c" rel="stylesheet" type="text/css">
+    <link  href="imageBack_norepeat.css" title="d" rel="stylesheet" type="text/css">
     <script language="JavaScript">
-        function setStyle(btn) {
-
+        function setStyle(btn) {//变换css样式
             var links;
             links=document.getElementsByTagName("link");
             for(var i=0;i<links.length;i++)
@@ -25,7 +26,13 @@
     </script>
 </head>
 <body>
-<button onclick="setStyle(this)" value="a">背景a</button>
-<button onclick="setStyle(this)" value="b">背景b</button>
+<button onclick="setStyle(this)" value="a">红色背景</button>
+<button onclick="setStyle(this)" value="b">蓝色背景</button>
+<br><br>
+<button onclick="setStyle(this)" value="c">图片背景_重复跟随移动</button><br>
+<button onclick="setStyle(this)" value="d">图片背景_不重复不跟随移动剧中变大</button><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
