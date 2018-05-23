@@ -2,6 +2,6 @@ body{
     background-image: url(image/lcat.gif);
     background-repeat: no-repeat;/* background-repeat: repeat-x;*/
     background-position: center center;/* background-position: 100px 100px;*/
-    background-attachment: fixed;
+    background-attachment: fixed;/*背景不随滚动移动*/
     background-size: 500px 1000px;
 }

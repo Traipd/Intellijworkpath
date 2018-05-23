@@ -1,5 +1,5 @@
 body{
     background-image: url(image/lcat.gif);
-    background-repeat: repeat;
-    background-attachment: scroll;
+    background-repeat: repeat;/*背景沿水平和竖直方向移动*/
+    background-attachment: scroll;/*背景随滚动移动*/
 }

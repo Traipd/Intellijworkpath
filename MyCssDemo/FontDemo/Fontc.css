@@ -1,0 +1,29 @@
+#a{
+    font-size: x-large;/*字体大小*/
+    color: #00ff00;
+    font-weight: 900;/*字体笔画的粗细程度*/
+    font-style: italic;/*字体倾斜；font-style:oblique;对没有 italic属性的字体让其倾斜*/
+}
+#b{
+    font-size: 5px;/*字体大小*/
+    color: blue;
+    font-weight: lighter;/*字体笔画的粗细程度*/
+    font-style: normal;
+}
+#arial{
+    font-family: Arial;
+}
+#kt{
+    font-family: 楷体;
+}
+#kaa{
+    font-family: 楷体,Arial;/*使用多个字体，避免系统为安装某种字体的情况*/
+}
+#uno{
+    unicode-bidi: normal;
+}
+#unu{
+    width: 200px;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
