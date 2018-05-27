@@ -1,14 +1,63 @@
 #a{
-    font-size: x-large;/*字体大小*/
-    color: #00ff00;
-    font-weight: 900;/*字体笔画的粗细程度*/
-    font-style: italic;/*字体倾斜；font-style:oblique;对没有 italic属性的字体让其倾斜*/
-}
+     font-size: x-large;/*字体大小*/
+     color: #00ff00;
+     font-weight: 900;/*字体笔画的粗细程度*/
+     font-style: italic;/*字体倾斜；font-style:oblique;对没有 italic属性的字体让其倾斜*/
+ }
 #b{
     font-size: 5px;/*字体大小*/
     color: blue;
     font-weight: lighter;/*字体笔画的粗细程度*/
     font-style: normal;
+}
+#c{
+    line-height: 10px;
+    letter-spacing: 10px;
+    text-indent: 20px;
+}
+#d{
+    word-spacing: 10px;
+}
+#e{
+    white-space: pre-wrap;
+}
+#f{
+    white-space: pre-line;
+}
+#g{
+    text-shadow:-5px -5px 5px #BF2A2C;
+                   /*,-5px -5px 5px #BF2A2C;可用多个阴影*/
+    /*水平位移  垂直位移 阴影模糊半径*/
+}
+#a1{
+  text-decoration: underline;/*下划线*/
+}
+#b1{
+    text-decoration:line-through;/*删除线*/
+}
+#c1{
+    text-decoration:red overline;/*上划线*/
+}
+#a2{
+    text-transform: uppercase;/*转换为大写*/
+}
+#b2{
+    text-transform:lowercase;/*转换为小写*/
+}
+#c2{
+    text-transform:capitalize;/*首字母大写*/
+}
+#d2{
+    font-variant: all-small-caps;/*small-caps仅英文有效*/
+}
+#a3{
+    text-align: left/*左对齐*/
+}
+#b3{
+    text-align: center;/*剧中对齐*/
+}
+#c3{
+    text-align:right;/*右对齐*/
 }
 #arial{
     font-family: Arial;
@@ -18,6 +67,38 @@
 }
 #kaa{
     font-family: 楷体,Arial;/*使用多个字体，避免系统为安装某种字体的情况*/
+}
+.h1{
+    font-size: 30px;
+    color: red;
+}
+.h8{
+    font-size: 3px;
+    color: green;
+}
+.h2{
+    vertical-align: sub;
+}
+.h3{
+    vertical-align: super;
+}
+.h4{
+    vertical-align: top;
+}
+.h5{
+    vertical-align: text-top;
+}
+.h6{
+    vertical-align: bottom;
+}
+.h7{
+    vertical-align: text-bottom;
+}
+#fiest:first-letter{
+    float: left;
+    margin-right: 5px;
+    color:red ;
+    font-size: 35px;
 }
 #uno{
     unicode-bidi: normal;
