@@ -10,6 +10,16 @@
     font-weight: lighter;/*字体笔画的粗细程度*/
     font-style: normal;
 }
+/*
+自定义字体的使用
+@font-face{
+font-family: myfont;
+src: url(...);
+}
+div{
+   font-family: myfont;
+}
+*/
 #c{
     line-height: 10px;
     letter-spacing: 10px;
@@ -107,4 +117,14 @@
     width: 200px;
     direction: rtl;
     unicode-bidi: bidi-override;
+}
+.ka{
+    word-break: keep-all;
+}
+.ba{
+    word-break: break-all;
+}
+.tw{
+    width: 200px;
+    text-wrap: normal;
 }
