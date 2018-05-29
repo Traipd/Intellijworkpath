@@ -1,0 +1,23 @@
+#a{
+    text-decoration: none;
+}
+#change:link{
+    color: black;/*未被访问时（不常用，被普通样式替代）*/
+}
+#change:hover{
+    color: blue;/*鼠标经过时（可以用于任意块元素和行内元素）*/
+}
+#change:visited{
+    color: red;/*被访问过后（请部署到服务器）*/
+}
+#change:active{
+    color: purple;/*鼠标单击时*/
+}
+#divch{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+}
+#divch:hover{
+    background-color: #BF2A2C;
+}
