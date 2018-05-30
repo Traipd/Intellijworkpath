@@ -6,6 +6,7 @@
 }
 #change:hover{
     color: blue;/*鼠标经过时（可以用于任意块元素和行内元素）*/
+    background-color: gray;
 }
 #change:visited{
     color: red;/*被访问过后（请部署到服务器）*/
@@ -20,4 +21,13 @@
 }
 #divch:hover{
     background-color: #BF2A2C;
+}
+#moused{
+    cursor: default;
+}
+#mousep{
+    cursor: pointer;
+}
+#mousei{
+    cursor: url("mouse.ico"),pointer;/*请使用ico，cur格式文件*/
 }

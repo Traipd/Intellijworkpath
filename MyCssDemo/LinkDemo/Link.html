@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <title>链接相关CSS样式</title>
     <link type="text/css" rel="stylesheet" href="link.css">
+    <script language="JavaScript">
+        function jal() {
+            alert("我是脚本2");
+        }
+    </script>
 </head>
 <body>
+<a target="_self" href="http://www.baidu.com">百度链接</a>
+<div id="head"></div>
 <a id="a" href="#">去除下划线</a><br>
 <a id="change" href="#">使用<strong>超链接伪类</strong>，不同情况下变换为不同状态</a>
-<div id="divch"></div>
+<div id="divch"></div><br>
+<div id="moused">鼠标默认样式</div><div id="mousep">鼠标手状样式</div><div id="mousei">鼠标自定义样式</div><br>
+<br>
+<p>图像区域映射</p>
+<img src="lcat.gif" usemap="myMap"/>
+<map name="myMap">
+<area shape="rect" coords="0,0,50,50" href="#bottom">
+</map>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="JavaScript:alert('我是脚本')">脚本链接</a><br>
+<a href="javaScript:jal();">脚本链接2</a><br>
+<a id="bottom" href="#head">返回到顶部（锚点链接）</a>
 </body>
 </html>
