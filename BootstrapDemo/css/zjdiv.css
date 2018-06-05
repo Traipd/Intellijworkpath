@@ -1,0 +1,58 @@
+/*#top_div{
+
+    width:992px;
+    height: 40%;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+#center_div{
+    height: 30%;
+    width:992px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+#bottom_div{
+    height: 30%;
+    width:992px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}*/
+.topm{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+
+    height: 30px;
+ /*   width:992px;*/
+    background-color:#CCC;
+
+}
+.topm  tr{
+
+}
+.topm td{
+
+    background-image:url(../images/001.jpg);
+    background-repeat:no-repeat;
+    background-position:left center;
+    text-indent:14px;
+
+}
+.topm a:hover{
+
+    background-color: beige;/*鼠标经过时变化*/
+
+}
+.alltable td{
+    background-color: aliceblue;
+    min-width: 100px;
+    height: 30px;
+    width: auto;
+}
+/*
+.frame_around{
+    height: 100%;
+}*/

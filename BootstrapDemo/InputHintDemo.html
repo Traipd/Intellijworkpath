@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入框动态提示Demo</title>
+    <script type="text/javascript" src="script/jquery.min.js"></script>
+
+    <script type="text/javascript" src="script/inputht.js"></script>
+    <link href="css/Inputht.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+<h1>输入框动态提示信息</h1>
+
+<div>
+    <label class="flabel">输入1：</label>
+    <input id="p_apiName"  onkeyup="autoComplete.start(event)"
+           name="apiName" type="text" autocomplete="off" style="width:395px;height:30px;font-size:15pt;" >
+</div><!--输入框-->
+
+<div  id="auto"  class="auto_hidden" style="height: auto; background-color: #F0F0F0;font-size: 15pt;">
+</div><!--提示框-->
+
+<br>
+
+<div>
+    <label class="flabel">输入2：</label>
+    <input  id="b"  onkeyup="autoComplete2.start(event)"
+            name="apiName" type="text" autocomplete="off" style="width:395px;height:30px;font-size:15pt;" >
+</div><!--输入框-->
+
+<div  id="bb"  class="auto_hidden" style="height: auto; background-color: #F0F0F0;font-size: 15pt;" >
+</div><!--提示框-->
+
+
+</body>
+</html>

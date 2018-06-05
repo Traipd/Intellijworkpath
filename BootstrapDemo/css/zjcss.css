@@ -1,0 +1,17 @@
+body{
+
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+  /*  width:992px;
+    height:900px;*/
+}
+a{
+    text-decoration: none;
+    white-space: nowrap;
+}
+iframe{
+    width:992px;
+    background-color: gray;
+    height: 88%;
+}
