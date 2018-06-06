@@ -1,0 +1,35 @@
+.circle{
+    list-style-type: circle;
+}
+.square{
+    list-style-type: square;
+}
+.decimal{
+    list-style-type: decimal;
+}
+.none{
+    list-style-type: none;
+}
+.image{
+    margin-left: 50px;
+    list-style-image: url("lovable.gif");
+}
+.vertical {
+  list-style-type: none;
+}
+.vertical li{
+    margin-bottom: 2px;
+    border: 1px solid #BB88BB;
+    width: 120px;
+}
+.vertical a:link{
+    display: block;
+    background-color: #D9D9D9;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+.vertical a:hover{
+    background-color: #F17022;
+}
