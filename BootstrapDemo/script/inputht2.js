@@ -1,7 +1,7 @@
 
 /*初始化*/
 $(document).ready(function(){
-    createApi();
+  /*  createApi();*/
     createApi2();/*多个输入框的使用*/
 });
 
@@ -11,13 +11,13 @@ var inputValue=["2090","2030","1012","1031","1033","1070","1072","1073"
     ,"1090","1011","1041","1061","1076","1034","1053","1071","2120","1030"
     ,"2060","1082","1091","1120","2010"
 ];
-var inputValue1=["2090","2030","1012","1031","1033","1070","1072","1073"
+var inputValue1=["2090a","2030","1012","1031","1033","1070","1072","1073"
     ,"2070","2020","2040","2050","1043","1060","1074","4000","1092","1111"
     ,"1121","1020","1040","1050","1075","1080","1110","1051","1022","1023"
     ,"1090","1011","1041","1061","1076","1034","1053","1071","2120","1030"
     ,"2060","1082","1091","1120","2010"
 ];
-var inputValue2=["2090","2030","1012","1031","1033","1070","1072","1073"
+var inputValue2=["2090b","2030","1012","1031","1033","1070","1072","1073"
     ,"2070","2020","2040","2050","1043","1060","1074","4000","1092","1111"
     ,"1121","1020","1040","1050","1075","1080","1110","1051","1022","1023"
     ,"1090","1011","1041","1061","1076","1034","1053","1071","2120","1030"
@@ -25,18 +25,18 @@ var inputValue2=["2090","2030","1012","1031","1033","1070","1072","1073"
 ];
 /*-----------------------------------------需要提示的信息-------------------------------------*/
 
-var autoComplete;
-/*-----！注意！ 输入框的 onkeyup="autoComplete.start(event)"------*/
+/*var autoComplete;
+/!*-----！注意！ 输入框的 onkeyup="autoComplete.start(event)"------*!/
 function createApi(){
     if(!autoComplete){
         autoComplete = new AutoComplete('p_apiName','auto',inputValue);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据
         //autoComplete = new AutoComplete('p_apiName','auto',inputValue);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据
     }
-}
+}*/
 var autoComplete2;
 function createApi2(){
     if(!autoComplete2){
-        autoComplete2 = new AutoComplete('b','bb',inputValue);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
+        autoComplete2 = new AutoComplete('b','b1','b2','bb',inputValue,inputValue1,inputValue2);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
     }
 }
 /*------------------------------------------------------------------------------------------------------*/
@@ -46,10 +46,14 @@ var Bind = function(object, fun) {
         return fun.apply(object, arguments);
     }
 }
-function AutoComplete(obj,autoObj,arr){              //数据类型
+function AutoComplete(obj,obj1,obj2,autoObj,arr,arr1,arr2){              //数据类型
     this.obj=document.getElementById(obj);        //输入框id，输入框
+    this.obj1=document.getElementById(obj1);
+    this.obj2=document.getElementById(obj2);
     this.autoObj=document.getElementById(autoObj);//下拉显示的id,DIV的根节点
     this.value_arr=arr;        //获取的全部数据,不要包含重复值
+    this.value_arr1=arr1;
+    this.value_arr2=arr2;
     this.index=-1;          //当前选中的DIV的索引
     this.search_value="";   //保存当前搜索的字符
 }
@@ -71,6 +75,8 @@ AutoComplete.prototype={
     setValue: function(_this){
         return function(){
             _this.obj.value=this.seq;
+            _this.obj1.value=this.seq1;
+            _this.obj2.value=this.seq2;
             _this.autoObj.className="auto_hidden";
         }
     },
@@ -139,7 +145,11 @@ AutoComplete.prototype={
             this.deleteDIV();
             this.search_value=this.obj.value;
             var valueArr=this.value_arr;
-            valueArr.sort();
+            var valueArr1=this.value_arr1;
+            var valueArr2=this.value_arr2;
+           /* valueArr.sort();
+            valueArr1.sort();
+            valueArr2.sort();*/
             if(this.obj.value.replace(/(^\s*)|(\s*$)/g,'')==""){ return; }//值为空，退出
             try{ var reg = new RegExp("(" + this.obj.value + ")","i");}
             catch (e){ return; }
@@ -149,6 +159,9 @@ AutoComplete.prototype={
                     var div = document.createElement("div");
                     div.className="auto_onmouseout";
                     div.seq=valueArr[i];
+                    div.seq1=valueArr1[i];
+                    div.seq2=valueArr2[i];
+                    div.numi=i;//新增
                     div.onclick=this.setValue(this);
                     div.onmouseover=this.autoOnmouseover(this,div_index);
                     div.innerHTML=valueArr[i].replace(reg,"<strong>$1</strong>");//搜索到的字符粗体显示

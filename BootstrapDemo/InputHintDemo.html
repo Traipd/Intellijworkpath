@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>输入框动态提示Demo</title>
     <script type="text/javascript" src="script/jquery.min.js"></script>
-
-    <script type="text/javascript" src="script/inputht.js"></script>
+    <script type="text/javascript" src="script/addAnddelet.js"></script>
+    <script type="text/javascript" src="script/inputht2.js"></script>
     <link href="css/Inputht.css" type="text/css" rel="stylesheet"/>
 
 </head>
@@ -17,7 +17,6 @@
     <input id="p_apiName"  onkeyup="autoComplete.start(event)"
            name="apiName" type="text" autocomplete="off" style="width:395px;height:30px;font-size:15pt;" >
 </div><!--输入框-->
-
 <div  id="auto"  class="auto_hidden" style="height: auto; background-color: #F0F0F0;font-size: 15pt;">
 </div><!--提示框-->
 
@@ -28,9 +27,57 @@
     <input  id="b"  onkeyup="autoComplete2.start(event)"
             name="apiName" type="text" autocomplete="off" style="width:395px;height:30px;font-size:15pt;" >
 </div><!--输入框-->
+<div>
+    <label class="flabel">输入21：</label>
+    <input id="b1"
+           name="apiName" type="text" autocomplete="off" style="width:395px;height:30px;font-size:15pt;" >
+</div><!--附带输入框1-->
+<div>
+    <label class="flabel">输入22：</label>
+    <input id="b2"
+           name="apiName" type="text" autocomplete="off" style="width:395px;height:30px;font-size:15pt;" >
+</div><!--附带输入框2-->
 
 <div  id="bb"  class="auto_hidden" style="height: auto; background-color: #F0F0F0;font-size: 15pt;" >
 </div><!--提示框-->
+
+
+<button class="btn btn-info"  onclick=" changeRadiolineDisable('znsb_td_tb','znsb_td_radio','checkcontrol')"><img src="images/bjsb.png" class="img-rounded">编辑通道</button>
+
+<div class=" row table-responsive mytable">
+
+
+        <div>
+            <ul></ul>
+
+                <input type="radio" name="znsb_td_radio">
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                </input>
+            <br>
+                <input type="radio" name="znsb_td_radio">
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                </input>
+            <br>
+                <input type="radio" name="znsb_td_radio">
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                </input>
+            <br>
+                <input type="radio" name="znsb_td_radio" >
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                    <input type="text" class="checkcontrol" disabled="true"/>
+                </input>
+            <br>
+
+        </div>
+
+</div>
 
 
 </body>

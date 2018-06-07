@@ -34,6 +34,43 @@ function onDelete(checkboxlistname,fid) { /*checkbox的name（同一表格所有
     }
 }
 
+function changeRadiolineDisable(fid,radiolistname,inputclassname) {/*父标签的id,radio的name（同一表格所有的name请保持一致）,input的class名*/
+
+    var radios = document.getElementsByName(radiolistname);
+    var fBody = document.getElementById(fid);
+    var trlist=fBody.getElementsByTagName('tr');
+
+    for (var i=0; i<radios.length; i++) {
+
+            var aBox=getByClass(trlist[i], inputclassname);
+            for(var j=0;j<aBox.length;j++) {
+                alert("1");
+                if (aBox[j].disabled == false)/*或使用.readOnly .disabled*/
+                {
+                    alert("请保存已修改的数据");
+                    return;
+                }
+                else {
+                }
+            }
+    }
+    for (var i=0; i<radios.length; i++) {
+        if (radios[i].checked) {
+                var aBox=getByClass(trlist[i], inputclassname);
+                for(var j=0;j<aBox.length;j++) {
+                    if (aBox[j].disabled == false)/*或使用.readOnly .disabled*/
+                    {
+                        aBox[j].disabled = true;
+                    }
+                    else {
+                        aBox[j].disabled = false;
+                    }
+                }
+        }
+    }
+
+}
+
 function changeCheckedlineDisable(fid,checkboxlistname,inputclassname) {/*父标签的id,checkbox的name（同一表格所有的name请保持一致）,input的class名*/
     var checks = document.getElementsByName(checkboxlistname);
     var fBody = document.getElementById(fid);
