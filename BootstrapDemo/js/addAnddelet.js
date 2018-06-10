@@ -81,12 +81,12 @@ function changeCheckedlineDisable(fid,checkboxlistname,inputclassname) {/*父标
         if (checks[i].checked) {
             var aBox=getByClass(trlist[i+1], inputclassname);
             for(var j=0;j<aBox.length;j++) {
-                if (aBox[j].disabled == false)/*或使用.readOnly .disabled*/
+                if (aBox[j].readOnly == false)/*或使用.readOnly .disabled*/
                 {
-                    aBox[j].disabled = true;
+                   /* aBox[j].readOnly = true;*/
                 }
                 else {
-                    aBox[j].disabled = false;
+                    aBox[j].readOnly = false;
                 }
             }
         }

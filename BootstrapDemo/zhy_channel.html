@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/addAnddelet.js"></script>
+</head>
+<body class="mybody">
+
+<div class="container-fluid">
+
+        <form action="channel_servlet" method="post">
+            <div class="topm">
+
+                <div id="top-menu2" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><!--<img src="images/zjsb.png">--><input  class="btn btn-info" onclick="changeCheckedlineDisable('fid','ch_id','control')"  type="button" value="修改"></li>
+                        <li><!--<img src="images/dcpz.png">--><input  class="btn btn-info"  type="submit" value="保存"></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div id="fid" class=" row table-responsive mytable" style="max-height: 330px">
+                <table class="table table-bordered table-hover table-condensed ">
+                    <tr class="info">
+                        <td>选择</td>
+                        <td>SPID</td>
+                        <td>通道名称</td>
+                        <td>通道类型</td>
+                        <td>通道号</td>
+                        <td>传感器最小量程</td>
+                        <td>传感器最大量程</td>
+                        <td>測量值最小量程</td>
+                        <td>測量值最大量程</td>
+                        <td>比例系数</td>
+                        <td>微调值</td>
+                    </tr>
+          <!--          <%
+
+                    List<Channel> list=new ArrayList<Channel>();
+                    String device_id_id=(String)session.getAttribute("device_id_id");
+                    System.out.println("device_id_id ="+device_id_id);
+                    Class.forName("org.sqlite.JDBC");
+                    Connection conn = DriverManager.getConnection("jdbc:sqlite://e:/sqlitejar/dictionary.db");//jdbc:sqlite::resource:dictionary.db 绝对路径jdbc:sqlite://e:/sqlitejar/dictionary.db
+                    System.out.println("1");
+                    Statement st=conn.createStatement();
+                    String sql="";
+
+                    sql="select * from dict_channel where device_id='"+device_id_id+"'";
+
+                    //sql="select * from dict_channel where device_id='2090'";
+                    System.out.println("3");
+                    System.out.println("sql="+sql);
+                    ResultSet rs=st.executeQuery(sql);
+                    System.out.println("4");
+                    try{
+                    while(rs.next()){
+
+                    String spid=rs.getString("spid");
+                    String spName=rs.getString("spName");
+                    String ch_name=rs.getString("ch_name");
+                    String channel_no=rs.getString("channel_no");
+                    String in_min=rs.getString("in_min");
+                    String in_max=rs.getString("in_max");
+                    String ch_min=rs.getString("ch_min");
+                    String ch_max=rs.getString("ch_max");
+                    String ch_k0=rs.getString("ch_k0");
+                    String ch_b0=rs.getString("ch_b0");
+                    Channel channel=new Channel(spid,spName,ch_name,channel_no,in_min,in_max,ch_min,ch_max,ch_k0,ch_b0);
+                    list.add(channel);
+                    }
+
+                    if(rs!=null){rs.close();}
+                    if(st!=null){st.close();}
+                    if(conn!=null){conn.close();}
+                    }catch(Exception e){
+                    throw e;
+                    }
+                    for(Channel channel:list){%>-->
+                    <tr class="warning">
+                        <td><input type="checkbox" name="ch_id" value="<%=channel.spid %>"> </td>
+                        <td> <input type="text"  readonly="true"  name="spid" value="<%=channel.spid  %>" ></td>
+                        <td> <input type="text"  readonly="true"  name="spName" value="<%=channel.spName  %>" ></td>
+                        <td> <input type="text"  class="control" readonly="true" name="ch_name" value="<%=channel.ch_name  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="channel_no" value="<%=channel.channel_no  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="in_min" value="<%=channel.in_min  %>" ></td>
+                        <td> <input type="text"  class="control" readonly="true" name="in_max" value="<%=channel.in_max  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_min" value="<%=channel.ch_min  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_max" value="<%=channel.ch_max  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_k0" value="<%=channel.ch_k0  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_b0" value="<%=channel.ch_b0  %>" ></td>
+                    </tr>
+                  <!--  <%}%>-->
+                    <tr class="warning">
+                        <td><input type="checkbox" name="ch_id" value="<%=channel.spid %>"> </td>
+                        <td> <input type="text"  readonly="true"  name="spid" value="<%=channel.spid  %>" ></td>
+                        <td> <input type="text"  readonly="true"  name="spName" value="<%=channel.spName  %>" ></td>
+                        <td> <input type="text"  class="control" readonly="true" name="ch_name" value="<%=channel.ch_name  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="channel_no" value="<%=channel.channel_no  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="in_min" value="<%=channel.in_min  %>" ></td>
+                        <td> <input type="text"  class="control" readonly="true" name="in_max" value="<%=channel.in_max  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_min" value="<%=channel.ch_min  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_max" value="<%=channel.ch_max  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_k0" value="<%=channel.ch_k0  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_b0" value="<%=channel.ch_b0  %>" ></td>
+                    </tr>
+                    <tr class="warning">
+                        <td><input type="checkbox" name="ch_id" value="<%=channel.spid %>"> </td>
+                        <td> <input type="text"  readonly="true"  name="spid" value="<%=channel.spid  %>" ></td>
+                        <td> <input type="text"  readonly="true"  name="spName" value="<%=channel.spName  %>" ></td>
+                        <td> <input type="text"  class="control" readonly="true" name="ch_name" value="<%=channel.ch_name  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="channel_no" value="<%=channel.channel_no  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="in_min" value="<%=channel.in_min  %>" ></td>
+                        <td> <input type="text"  class="control" readonly="true" name="in_max" value="<%=channel.in_max  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_min" value="<%=channel.ch_min  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_max" value="<%=channel.ch_max  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_k0" value="<%=channel.ch_k0  %>" ></td>
+                        <td> <input type="text" class="control" readonly="true"  name="ch_b0" value="<%=channel.ch_b0  %>" ></td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </form>
+
+</div>
+
+</body>
+</html>
+<!--
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dao.obj.Device,dao.obj.Channel,java.util.List,java.util.ArrayList" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通道字典配置</title>
+    <link type="text/css" rel="stylesheet" href="css/z_c.css">
+    <link type="text/css" rel="stylesheet" href="css/z_d.css">
+</head>
+<body>
+<form action="channel_servlet" method="post">
+    <div class="topm">
+
+        <table border="0px">
+            <tr>
+                &lt;!&ndash; <input type="file" id="2" style="display: none" />
+
+                  <td style="background-image: url(images/drpz.png)">
+                  <a href="#" onclick="document.getElementById(2).click();">导入配置字典</a></td> &ndash;&gt;
+
+
+                <td><img src="images/zjsb.png"><input type="button" value="修改"></td>
+                <td><img src="images/dcpz.png"><input type="submit" value="保存"></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="alltable">
+        <table>
+            <tr>
+                <td>选择</td>
+                <td>SPID</td>
+                <td>通道名称</td>
+                <td>通道类型</td>
+                <td>通道号</td>
+                <td>传感器最小量程</td>
+                <td>传感器最大量程</td>
+                <td>測量值最小量程</td>
+                <td>測量值最大量程</td>
+                <td>比例系数</td>
+                <td>微调值</td>
+            </tr>
+            <%
+
+            List<Channel> list=new ArrayList<Channel>();
+            String device_id_id=(String)session.getAttribute("device_id_id");
+            System.out.println("device_id_id ="+device_id_id);
+            Class.forName("org.sqlite.JDBC");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite://e:/sqlitejar/dictionary.db");//jdbc:sqlite::resource:dictionary.db 绝对路径jdbc:sqlite://e:/sqlitejar/dictionary.db
+            System.out.println("1");
+            Statement st=conn.createStatement();
+            String sql="";
+
+            sql="select * from dict_channel where device_id='"+device_id_id+"'";
+
+            //sql="select * from dict_channel where device_id='2090'";
+            System.out.println("3");
+            System.out.println("sql="+sql);
+            ResultSet rs=st.executeQuery(sql);
+            System.out.println("4");
+            try{
+            while(rs.next()){
+
+            String spid=rs.getString("spid");
+            String spName=rs.getString("spName");
+            String ch_name=rs.getString("ch_name");
+            String channel_no=rs.getString("channel_no");
+            String in_min=rs.getString("in_min");
+            String in_max=rs.getString("in_max");
+            String ch_min=rs.getString("ch_min");
+            String ch_max=rs.getString("ch_max");
+            String ch_k0=rs.getString("ch_k0");
+            String ch_b0=rs.getString("ch_b0");
+            Channel channel=new Channel(spid,spName,ch_name,channel_no,in_min,in_max,ch_min,ch_max,ch_k0,ch_b0);
+            list.add(channel);
+            }
+
+            if(rs!=null){rs.close();}
+            if(st!=null){st.close();}
+            if(conn!=null){conn.close();}
+            }catch(Exception e){
+            throw e;
+            }
+            for(Channel channel:list){%>
+            <tr>
+                <td><input type="checkbox" name="ch_id" value="<%=channel.spid %>"> </td>
+                <td> <input type="text" name="spid" value="<%=channel.spid  %>" ></td>
+                <td> <input type="text" name="spName" value="<%=channel.spName  %>" ></td>
+                <td> <input type="text" name="ch_name" value="<%=channel.ch_name  %>" ></td>
+                <td> <input type="text" name="channel_no" value="<%=channel.channel_no  %>" ></td>
+                <td> <input type="text" name="in_min" value="<%=channel.in_min  %>" ></td>
+                <td> <input type="text" name="in_max" value="<%=channel.in_max  %>" ></td>
+                <td> <input type="text" name="ch_min" value="<%=channel.ch_min  %>" ></td>
+                <td> <input type="text" name="ch_max" value="<%=channel.ch_max  %>" ></td>
+                <td> <input type="text" name="ch_k0" value="<%=channel.ch_k0  %>" ></td>
+                <td> <input type="text" name="ch_b0" value="<%=channel.ch_b0  %>" ></td>
+            </tr>
+            <%}%>
+        </table>
+    </div>
+</form>
+</body>
+</html>-->

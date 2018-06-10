@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>输入框动态提示Demo</title>
     <script type="text/javascript" src="script/jquery.min.js"></script>
     <script type="text/javascript" src="script/addAnddelet.js"></script>
-    <script type="text/javascript" src="script/inputht2.js"></script>
-    <link href="css/Inputht.css" type="text/css" rel="stylesheet"/>
 
+    <link href="css/Inputht.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="script/inputht3.js"></script>
 </head>
 <body>
 <h1>输入框动态提示信息</h1>
@@ -42,38 +42,44 @@
 </div><!--提示框-->
 
 
-<button class="btn btn-info"  onclick=" changeRadiolineDisable('znsb_td_tb','znsb_td_radio','checkcontrol')"><img src="images/bjsb.png" class="img-rounded">编辑通道</button>
+<button class="btn btn-info"  onclick=" changeRadiolineDisable('fid','znsb_td_radio','checkcontrol')"><img src="images/bjsb.png" class="img-rounded">编辑通道</button>
 
 <div class=" row table-responsive mytable">
 
 
-        <div>
-            <ul></ul>
+        <div id="fid">
+                <div>
+                    <input type="radio" name="znsb_td_radio">
+                        <input type="text" class="checkcontrol" readonly="true"/>
+                        <input type="text" class="checkcontrol" readonly="true"/>
+                        <input type="text" class="checkcontrol" readonly="true"/>
+                    </input>
+                </div>
 
+            <div>
                 <input type="radio" name="znsb_td_radio">
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
                 </input>
-            <br>
+            </div>
+
+            <div>
                 <input type="radio" name="znsb_td_radio">
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
                 </input>
-            <br>
+            </div>
+
+            <div>
                 <input type="radio" name="znsb_td_radio">
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
+                <input type="text" class="checkcontrol" readonly="true"/>
                 </input>
-            <br>
-                <input type="radio" name="znsb_td_radio" >
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                    <input type="text" class="checkcontrol" disabled="true"/>
-                </input>
-            <br>
+            </div>
+
 
         </div>
 

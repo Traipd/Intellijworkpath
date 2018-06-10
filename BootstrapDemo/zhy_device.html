@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/addAnddelet.js"></script>
+</head>
+<body class="mybody">
+
+<div class="container-fluid">
+
+            <form action="device_servlet" method="post">
+                <div class="topm">
+
+                    <div id="top-menu2" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav ">
+                            <li><!--<img src="images/zjsb.png">--><input class="btn btn-info" type="button" onclick="changeCheckedlineDisable('fid','id','control')" value="修改"></li>
+                            <li><!--<img src="images/dcpz.png">--><input class="btn btn-info" type="submit" value="保存"></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div id="fid" class=" row table-responsive mytable" style="max-height: 300px">
+                    <table class="table table-bordered table-hover table-condensed ">
+                        <tr  class="info">
+                            <td>选择</td>
+                            <td>设备ID</td>
+                            <td>设备名称</td>
+                            <td>设备端口号</td>
+                        </tr>
+            <!--            <%
+
+                        List<Device> list=new ArrayList<Device>();
+                        Class.forName("org.sqlite.JDBC");
+                        Connection conn = DriverManager.getConnection("jdbc:sqlite://e:/sqlitejar/dictionary.db");//jdbc:sqlite::resource:dictionary.db 绝对路径jdbc:sqlite://e:/sqlitejar/dictionary.db
+                        System.out.println("1");
+                        Statement st=conn.createStatement();
+                        System.out.println("2");
+                        String sql="select * from dict_device";
+                        System.out.println("3");
+                        ResultSet rs=st.executeQuery(sql);
+                        System.out.println("4");
+                        try{
+                        while(rs.next()){
+                        String device_id=rs.getString("device_id");
+                        String device_name=rs.getString("device_name");
+                        String dev_comm=rs.getString("dev_comm");
+
+                        Device device=new Device(device_id,device_name,dev_comm);
+                        list.add(device);
+                        }
+
+                        if(rs!=null){rs.close();}
+                        if(st!=null){st.close();}
+                        if(conn!=null){conn.close();}
+                        }catch(Exception e){
+                        throw e;
+                        }
+                        for(Device device:list){%>-->
+                        <tr class="warning">
+                            <td> <input type="button"  onclick="getdevice_id('<%=device.device_id %>');" value="获取"><input type="checkbox"  name="id" value="<%=device.device_id %>" ></td>
+                            <td> <input type="text" class="control" readonly="true" id="<%=device.device_id %>" name="device_id" value="<%=device.device_id  %>"> </td>
+                            <td> <input type="text"  class="control"  readonly="true" name="device_name" value="<%=device.device_name %>" ></td>
+                            <td> <input type="text"  class="control"  readonly="true" name="dev_comm" value="<%=device.dev_comm %>" ></td>
+                        </tr>
+                      <!--  <%
+                        }
+                        %>-->
+                        <tr class="warning">
+                            <td> <input type="button"  onclick="getdevice_id('<%=device.device_id %>');" value="获取"><input type="checkbox"  name="id" value="<%=device.device_id %>" ></td>
+                            <td> <input type="text" class="control" readonly="true" id="<%=device.device_id %>" name="device_id" value="<%=device.device_id  %>"> </td>
+                            <td> <input type="text"  class="control"  readonly="true" name="device_name" value="<%=device.device_name %>" ></td>
+                            <td> <input type="text"  class="control"  readonly="true" name="dev_comm" value="<%=device.dev_comm %>" ></td>
+                        </tr>
+                        <tr class="warning">
+                            <td> <input type="button"  onclick="getdevice_id('<%=device.device_id %>');" value="获取"><input type="checkbox"  name="id" value="<%=device.device_id %>" ></td>
+                            <td> <input type="text" class="control" readonly="true" id="<%=device.device_id %>" name="device_id" value="<%=device.device_id  %>"> </td>
+                            <td> <input type="text"  class="control"  readonly="true" name="device_name" value="<%=device.device_name %>" ></td>
+                            <td> <input type="text"  class="control"  readonly="true" name="dev_comm" value="<%=device.dev_comm %>" ></td>
+                        </tr>
+                        <tr class="warning">
+                            <td> <input type="button"  onclick="getdevice_id('<%=device.device_id %>');" value="获取"><input type="checkbox"  name="id" value="<%=device.device_id %>" ></td>
+                            <td> <input type="text" class="control" readonly="true" id="<%=device.device_id %>" name="device_id" value="<%=device.device_id  %>"> </td>
+                            <td> <input type="text"  class="control"  readonly="true" name="device_name" value="<%=device.device_name %>" ></td>
+                            <td> <input type="text"  class="control"  readonly="true" name="dev_comm" value="<%=device.dev_comm %>" ></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </form>
+
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    function getdevice_id(device_id_id) {
+        var device_id=document.getElementById(device_id_id);
+        alert(device_id.value);
+        $.post("/dictionary/posted",
+            {needed_id:device_id.value},
+            function(){
+                window.parent.location.reload();
+            });
+    }
+</script>
+</body>
+</html>
+<!--
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dao.obj.Device,java.util.List,java.util.ArrayList" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设备字典配置</title>
+    <link type="text/css" rel="stylesheet" href="css/z_c.css">
+    <link type="text/css" rel="stylesheet" href="css/z_d.css">
+
+
+</head>
+<body>
+<form action="device_servlet" method="post">
+    <div class="topm">
+
+
+
+        <table border="0px">
+            <tr>
+                &lt;!&ndash; <input type="file" id="2" style="display: none" />
+
+                  <td style="background-image: url(images/drpz.png)">
+                  <a href="#" onclick="document.getElementById(2).click();">导入配置字典</a></td> &ndash;&gt;
+
+                <td><img src="images/zjsb.png"><input type="button" value="修改"></td>
+                <td><img src="images/dcpz.png"><input type="submit" value="保存"></td>
+            </tr>
+        </table>
+
+
+    </div>
+    <div class="alltable">
+        <table>
+            <tr>
+                <td>选择</td>
+                <td>设备ID</td>
+                <td>设备名称</td>
+                <td>设备端口号</td>
+            </tr>
+            <%
+
+            List<Device> list=new ArrayList<Device>();
+            Class.forName("org.sqlite.JDBC");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite://e:/sqlitejar/dictionary.db");//jdbc:sqlite::resource:dictionary.db 绝对路径jdbc:sqlite://e:/sqlitejar/dictionary.db
+            System.out.println("1");
+            Statement st=conn.createStatement();
+            System.out.println("2");
+            String sql="select * from dict_device";
+            System.out.println("3");
+            ResultSet rs=st.executeQuery(sql);
+            System.out.println("4");
+            try{
+            while(rs.next()){
+            String device_id=rs.getString("device_id");
+            String device_name=rs.getString("device_name");
+            String dev_comm=rs.getString("dev_comm");
+
+            Device device=new Device(device_id,device_name,dev_comm);
+            list.add(device);
+            }
+
+            if(rs!=null){rs.close();}
+            if(st!=null){st.close();}
+            if(conn!=null){conn.close();}
+            }catch(Exception e){
+            throw e;
+            }
+            for(Device device:list){%>
+            <tr>
+                <td> <input type="button"  onclick="getdevice_id('<%=device.device_id %>');" value="获取"><input type="checkbox"  name="id" value="<%=device.device_id %>" ></td>
+                <td> <input type="text" id="<%=device.device_id %>" name="device_id" value="<%=device.device_id  %>"> </td>
+                <td> <input type="text" name="device_name" value="<%=device.device_name %>" ></td>
+                <td> <input type="text" name="dev_comm" value="<%=device.dev_comm %>" ></td>
+            </tr>
+            <%
+            }
+            %>
+        </table>
+    </div>
+</form>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    function getdevice_id(device_id_id) {
+        var device_id=document.getElementById(device_id_id);
+        alert(device_id.value);
+
+        $.post("/dictionary/posted",
+            {needed_id:device_id.value},
+            function(){
+                //alert(device_id.value);
+                window.parent.location.reload();
+            });
+
+        /* $.ajax({
+                    url : "/dictionary/posted",
+                    data : {
+                        "needed_id" : "2090"
+                    },
+                    dataType : 'json',
+                    type : "post",
+                    traditional: true,//属性在这里设置
+                    success : function(message) {
+                        //回调函数代码省略
+                    },
+                    waitMsg : '正在处理数据....'
+                }); */
+    }
+</script>
+
+</body>
+</html>-->

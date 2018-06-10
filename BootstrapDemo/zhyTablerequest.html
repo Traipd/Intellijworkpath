@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zhy获取表格设备ID</title>
+    <script type="text/javascript" src="script/jquery.min.js"></script>
+    <script>
+        function getdevice_id(device_id_id) {
+            var device_id=document.getElementById(device_id_id);
+            alert(device_id.value);
+            var n=device_id.val();
+            $.post("",
+                {name:device_id.value},
+                function(){
+                    alert(device_id.value);
+                });
+
+
+        }
+    </script>
+</head>
+<body>
+
+
+
+        <tr>
+            <td><input type="submit" onclick="getdevice_id('device_id_id')" value="获取"></td>
+            <td> <input type="checkbox"  name="id" > </td>
+            <td> <input type="text" id="device_id_id" name="device_id" value="hello"> </td>
+            <td> <input type="text" name="device_name"></td>
+            <td> <input type="text" name="dev_comm" ></td>
+        </tr>
+
+</body>
+</html>

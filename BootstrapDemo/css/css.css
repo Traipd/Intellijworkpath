@@ -1,45 +1,112 @@
 @charset "utf-8";
-*{
-	padding:0px;
-	margin:0px;
-	border:0px;
+
+.box{
+	/*height: 1100px;*/
+	/*border:2px solid #4cae4c;*/
+	background-color:RGB(153,217,234);
 }
 
-body{
-	font-family:"宋体";
-	font-size:12px;
-	background-color:#CCC;
+
+#title img{
+	float: left;
+	margin-right: 10px;
+	margin-top: 3px;
 }
 
-a{
-	color:#000;
-	text-decoration:none;
+#top-menu{
+	border-bottom: 2px solid #ffffff;
+	padding-bottom: 5px;
 }
 
-#top-title img{
-	margin-left:5px;
-	margin-right:5px;
+#top-menu li{
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
-#top-menu ul li{
-	float:left;
-	padding-left:6px;
-	padding-right:6px;
-	list-style:none;
-	background-image:url(../images/001.jpg);
-	background-repeat:no-repeat;
-	background-position:left center;
-	text-indent:10px;
+#left-menu{
+	padding-top: 20px;
+	border-right: 2px solid #ffffff;
+	height: 1000px;
 }
 
-#center-left ul li{
-	list-style:none;
+#left-menu li img{
+	margin-bottom:3px;
+	padding-right:5px;
 }
 
-#center-left ul li ul li{
-	background-image:url(../images/001.jpg);
-	background-repeat:no-repeat;
-	background-position:5px center;
-	text-indent:25px;
+#left-menu .align{
+	text-align: center;
+	background-color: #5bc0de;
 }
-	
+
+
+#center-right{
+	height: 1000px;
+	padding-left: 0px;
+	/*border: solid 1px #000000;*/
+}
+
+#center-right-iframe{
+	width: 1106px;
+	height: 1000px;
+}
+
+
+/*下面是子页面的样式*/
+
+.mybody{
+	background-color:RGB(153,217,234);
+}
+
+#top-menu2{
+	margin-top: 10px;
+	margin-left: -20px;
+}
+
+#top-menu2 li{
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+#top-menu3 {
+	margin-top: 5px;
+}
+
+#top-menu3 li{
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.mytable{
+	height: 280px;
+	margin-top: 1px;
+	margin-left: -2px;
+	border: 1px solid #ffffff;
+}
+
+.mytable td{
+	min-width: 120px;
+	text-align: center;
+}
+
+.mytable2{
+	height: 300px;
+	margin-top: 1px;
+	margin-left: -2px;
+	border: 1px solid #ffffff;
+}
+
+.mytable2 td{
+	min-width: 120px;
+	text-align: center;
+}
+
+.top-menu2{
+	margin-top: 10px;
+	margin-left: -20px;
+}
+
+.top-menu2 li{
+	margin-left: 2px;
+	margin-right: 2px;
+}
