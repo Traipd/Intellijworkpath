@@ -39,7 +39,7 @@ function createApi(){
 var autoComplete2;
 function createApi2(){
     if(!autoComplete2){
-        autoComplete2 = new AutoComplete('b','b1','b2','bb',inputValue,inputValue1,inputValue2);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
+        autoComplete2 = new AutoComplete('b1','b','b2','bb',inputValue1,inputValue,inputValue2);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
     }
 }
 /*------------------------------------------------------------------------------------------------------*/

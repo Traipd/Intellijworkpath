@@ -1,30 +1,16 @@
-
-/*初始化*/
 $(document).ready(function(){
     /*  createApi();*/
     createApi2();/*多个输入框的使用*/
 
 });
 
-var inputValue=["2090","2030","1012","1031","1033","1070","1072","1073",
-    "2070","2020","2040","2050","1043","1060","1074","4000","1092","1111",
-    "1121","1020","1040","1050","1075","1080","1110","1051","1022","1023",
-    "1090","1011","1041","1061","1076","1034","1053","1071","2120","1030",
-    "2060","1082","1091","1120","2010"
+var inputValue=["1","2","3","4"
 ];
-var inputValue1=["动力监控系统" ,"发电机组系统" ,"高压操作电源" ,"移动式发电机组" ,
-    "油库/箱" ,"中央空调主机" ,"冷却塔" ,"配电屏" ,"中央空调系统" ,"低压配电系统" ,
-    "UPS系统" ,"240V直流系统" ,"UPS配电屏" ,"48V整流设备" ,"水箱" ,"局站名称" ,
-    "网络设备" ,"直流列柜" ,"消防安防监测设备" ,"低压配电屏" ,"UPS主机" ,"240V整流设备" ,
-    "储冷罐" ,"精密空调" ,"交流列柜" ,"240V蓄电池组" ,"电容补偿柜" ,"谐波滤波器" ,
-    "采集设备" ,"变压器" ,"UPS蓄电池组" ,"48V蓄电池组" ,"蝶阀" ,"交流屏" ,"交流屏" ,
-    "水泵" ,"机房系统" ,"固定式发电机组" ,"48V直流系统" ,"普通空调" ,"被控设备" ,
-    "环境监测设备" ,"高压变配电系统"
+var inputValue1=["1000","1000","1000","1000"
 ];
-var inputValue2=["   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,
-    "   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,
-    "   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,"   " ,
-    "   " ,"   " ,"   " ,"   "
+var inputValue2=["LOW","0->1->0","1->0->1","HIGH"
+];
+var inputValue3=["0","1","2","3"
 ];
 /*-----------------------------------------需要提示的信息-------------------------------------*/
 
@@ -39,7 +25,7 @@ function createApi(){
 var autoComplete2;
 function createApi2(){
     if(!autoComplete2){
-        autoComplete2 = new AutoComplete('b','b1','b2','bb',inputValue,inputValue1,inputValue2);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
+        autoComplete2 = new AutoComplete('b','b1','b2','b3','bb',inputValue,inputValue1,inputValue2,inputValue3);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
     }
 }
 /*------------------------------------------------------------------------------------------------------*/
@@ -49,14 +35,16 @@ var Bind = function(object, fun) {
         return fun.apply(object, arguments);
     }
 }
-function AutoComplete(obj,obj1,obj2,autoObj,arr,arr1,arr2){              //数据类型
+function AutoComplete(obj,obj1,obj2,obj3,autoObj,arr,arr1,arr2,arr3){              //数据类型
     this.obj=document.getElementById(obj);        //输入框id，输入框
     this.obj1=document.getElementById(obj1);
     this.obj2=document.getElementById(obj2);
+    this.obj3=document.getElementById(obj3);
     this.autoObj=document.getElementById(autoObj);//下拉显示的id,DIV的根节点
     this.value_arr=arr;        //获取的全部数据,不要包含重复值
     this.value_arr1=arr1;
     this.value_arr2=arr2;
+    this.value_arr3=arr3;
     this.index=-1;          //当前选中的DIV的索引
     this.search_value="";   //保存当前搜索的字符
 }
@@ -80,6 +68,7 @@ AutoComplete.prototype={
             _this.obj.value=this.seq;
             _this.obj1.value=this.seq1;
             _this.obj2.value=this.seq2;
+            _this.obj3.value=this.seq3;
             _this.autoObj.className="auto_hidden";
         }
     },
@@ -150,6 +139,7 @@ AutoComplete.prototype={
             var valueArr=this.value_arr;
             var valueArr1=this.value_arr1;
             var valueArr2=this.value_arr2;
+            var valueArr3=this.value_arr3;
             /* valueArr.sort();
              valueArr1.sort();
              valueArr2.sort();*/
@@ -164,6 +154,7 @@ AutoComplete.prototype={
                     div.seq=valueArr[i];
                     div.seq1=valueArr1[i];
                     div.seq2=valueArr2[i];
+                    div.seq3=valueArr3[i];
                     div.numi=i;//新增
                     div.onclick=this.setValue(this);
                     div.onmouseover=this.autoOnmouseover(this,div_index);
