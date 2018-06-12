@@ -1,16 +1,16 @@
 $(document).ready(function(){
     /*  createApi();*/
-    createApi2();/*多个输入框的使用*/
+    createApido2();/*多个输入框的使用*/
 
 });
 
-var inputValue=["1","2","3","4"
+var inputValuedo=["1","2","3","4"
 ];
-var inputValue1=["1000","1000","1000","1000"
+var inputValuedo1=["1000","1000","1000","1000"
 ];
-var inputValue2=["LOW","0->1->0","1->0->1","HIGH"
+var inputValuedo2=["LOW","0->1->0","1->0->1","HIGH"
 ];
-var inputValue3=["0","1","2","3"
+var inputValuedo3=["0","1","2","3"
 ];
 /*-----------------------------------------需要提示的信息-------------------------------------*/
 
@@ -22,10 +22,10 @@ function createApi(){
         //autoComplete = new AutoComplete('p_apiName','auto',inputValue);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据
     }
 }*/
-var autoComplete2;
-function createApi2(){
-    if(!autoComplete2){
-        autoComplete2 = new AutoComplete('b','b1','b2','b3','bb',inputValue,inputValue1,inputValue2,inputValue3);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
+var autoCompletedo2;
+function createApido2(){
+    if(!autoCompletedo2){
+        autoCompletedo2 = new AutoCompletedo('dob','dob1','dob2','dob3','dobb',inputValuedo,inputValuedo1,inputValuedo2,inputValuedo3);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
     }
 }
 /*------------------------------------------------------------------------------------------------------*/
@@ -35,7 +35,7 @@ var Bind = function(object, fun) {
         return fun.apply(object, arguments);
     }
 }
-function AutoComplete(obj,obj1,obj2,obj3,autoObj,arr,arr1,arr2,arr3){              //数据类型
+function AutoCompletedo(obj,obj1,obj2,obj3,autoObj,arr,arr1,arr2,arr3){              //数据类型
     this.obj=document.getElementById(obj);        //输入框id，输入框
     this.obj1=document.getElementById(obj1);
     this.obj2=document.getElementById(obj2);
@@ -48,7 +48,7 @@ function AutoComplete(obj,obj1,obj2,obj3,autoObj,arr,arr1,arr2,arr3){           
     this.index=-1;          //当前选中的DIV的索引
     this.search_value="";   //保存当前搜索的字符
 }
-AutoComplete.prototype={
+AutoCompletedo.prototype={
     //初始化DIV的位置
     init: function(){
         this.autoObj.style.left = this.obj.offsetLeft + "px";
@@ -131,7 +131,7 @@ AutoComplete.prototype={
         }
     },
     //程序入口
-    start: function(event){
+    startdo: function(event){
         if(event.keyCode!=13&&event.keyCode!=38&&event.keyCode!=40){
             this.init();
             this.deleteDIV();

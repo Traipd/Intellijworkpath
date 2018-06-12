@@ -36,10 +36,10 @@ function createApi(){
         //autoComplete = new AutoComplete('p_apiName','auto',inputValue);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据
     }
 }*/
-var autoComplete2;
+var autoComplete31;
 function createApi2(){
-    if(!autoComplete2){
-        autoComplete2 = new AutoComplete('b1','b','b2','bb',inputValue1,inputValue,inputValue2);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
+    if(!autoComplete31){
+        autoComplete31 = new AutoComplete('b1','b','b2','bb',inputValue1,inputValue,inputValue2);//第一个参数是输入框id，第二个是下拉显示的id，第三个是获取的全部数据。
     }
 }
 /*------------------------------------------------------------------------------------------------------*/
@@ -142,7 +142,7 @@ AutoComplete.prototype={
         }
     },
     //程序入口
-    start: function(event){
+    start31: function(event){
         if(event.keyCode!=13&&event.keyCode!=38&&event.keyCode!=40){
             this.init();
             this.deleteDIV();
